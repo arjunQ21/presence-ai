@@ -2,3 +2,6 @@ venv/*
 .ipynb_checkpoints
 .DS_Store
 all-pics/*
+siamese_modelv2.h5
+training_checkpoints/*
+training_checkpoints
