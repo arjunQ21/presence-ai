@@ -1,0 +1,47 @@
+Using Unresized image
+Taking unsampling count = 1
+Found faces: 3, unsampling count: 1, time taken: 0.0035647978782653808
+[(407, 2141, 593, 1955), (1317, 1017, 1702, 632), (663, 1702, 885, 1479)]
+Taking unsampling count = 2
+Found faces: 3, unsampling count: 2, time taken: 0.014664064884185792
+[(401, 2134, 594, 1941), (661, 1713, 892, 1482), (1321, 1054, 1721, 655)]
+Taking unsampling count = 3
+Found faces: 6, unsampling count: 3, time taken: 0.07502770781517029
+[(394, 2146, 593, 1946), (659, 1723, 899, 1484), (1324, 1047, 1738, 633), (652, 2516, 661, 2507), (753, 2503, 766, 2490), (470, 2717, 485, 2702)]
+
+Using resized image
+Taking unsampling count = 1
+Found faces: 3, unsampling count: 1, time taken: 0.4482390880584717 seconds.
+[(138, 760, 213, 685), (460, 373, 614, 218), (226, 603, 315, 514)]
+Taking unsampling count = 2
+Found faces: 3, unsampling count: 2, time taken: 1.8048100471496582 seconds.
+[(134, 762, 212, 684), (471, 352, 605, 218), (224, 605, 316, 512)]
+Taking unsampling count = 3
+Found faces: 3, unsampling count: 3, time taken: 7.3024280071258545 seconds.
+[(138, 754, 205, 687), (229, 602, 309, 522), (473, 365, 612, 226)]
+Taking unsampling count = 4
+Found faces: 3, unsampling count: 4, time taken: 30.64294981956482 seconds.
+[(136, 759, 205, 689), (228, 606, 311, 523), (459, 362, 603, 218)]
+
+Using cnn model, resized image
+Taking unsampling count = 1
+Found faces: 5, unsampling count: 1, time taken: 6.919738054275513 seconds.
+[(135, 750, 192, 693), (540, 494, 658, 376), (454, 337, 595, 195), (219, 599, 301, 517), (636, 792, 754, 674)]
+
+Using cnn model, downsizing image further
+Taking unsampling count = 1
+Found faces: 4, unsampling count: 1, time taken: 0.8352987766265869 seconds.
+[(216, 192, 263, 145), (179, 128, 235, 71), (81, 240, 121, 201), (249, 312, 297, 265)]
+Taking unsampling count = 2
+Found faces: 5, unsampling count: 2, time taken: 4.335587978363037 seconds.
+[(48, 299, 76, 270), (185, 125, 234, 76), (82, 234, 116, 200), (218, 191, 259, 150), (249, 314, 298, 265)]
+Taking unsampling count = 3
+
+Using cnn model, 1000x1000 image, 
+Resizing image: 4032x3024
+Taking unsampling count = 1
+Found faces: 5, unsampling count: 1, time taken: 5.229774713516235 seconds.
+[(489, 468, 529, 429), (569, 208, 609, 169), (542, 130, 590, 83), (625, 548, 665, 509), (629, 356, 669, 317)]
+Taking unsampling count = 2
+Found faces: 7, unsampling count: 2, time taken: 45.625510931015015 seconds.
+[(490, 466, 524, 432), (524, 187, 544, 167), (522, 337, 542, 317), (623, 543, 664, 502), (571, 207, 600, 178), (635, 348, 663, 319), (544, 124, 585, 83)]
