@@ -5,3 +5,5 @@ all-pics/*
 siamese_modelv2.h5
 training_checkpoints/*
 training_checkpoints
+temp-faces/*
+*__pycache__*
