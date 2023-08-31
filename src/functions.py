@@ -1,5 +1,4 @@
-import face_recognition as fr
-import time
+import tensorflow as tf
 import os
 import cv2
 
@@ -7,6 +6,23 @@ def make_sure_image_exists(image_path):
     if not os.path.exists(image_path):
         raise Exception("File not found at: {}".format(image_path))
     return 0
+
+# function to convert image to (105, 105)
+def preprocess(image_path):
+    make_sure_image_exists(image_path)
+    byte_image = tf.io.read_file(image_path)
+#     print(byte_image)
+    img = tf.io.decode_jpeg(byte_image)
+#     print(img)
+#     plt.imshow(img)
+    img = tf.image.resize(img, (105, 105))
+
+    img = img / 255.0 
+#     plt.imshow(img)
+    #     plt.n
+    return img
+
+
 
 def image_needs_resizing(image_path):
     make_sure_image_exists(image_path)
@@ -30,17 +46,3 @@ def resize_image(image_path):
     resized_image = cv2.resize(image, (new_width, new_height))
     cv2.imwrite(image_path, resized_image)
     return 0
-
-def get_faces_in(image_path):
-    if(image_needs_resizing(image_path)):
-        resize_image(image_path)
-
-    image = fr.load_image_file(image_path)
-    start_time = time.time() 
-    face_locations = fr.face_locations(image, number_of_times_to_upsample=2, model='cnn')
-    print("Found faces: {}, upsampling count: {}, time taken: {} seconds.".format(len(face_locations), 2, (time.time() - start_time)))
-    return face_locations
-
-# get_faces_in("test-images/group_pic.jpg") 
-
-

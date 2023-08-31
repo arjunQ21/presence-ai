@@ -45,3 +45,10 @@ Found faces: 5, unsampling count: 1, time taken: 5.229774713516235 seconds.
 Taking unsampling count = 2
 Found faces: 7, unsampling count: 2, time taken: 45.625510931015015 seconds.
 [(490, 466, 524, 432), (524, 187, 544, 167), (522, 337, 542, 317), (623, 543, 664, 502), (571, 207, 600, 178), (635, 348, 663, 319), (544, 124, 585, 83)]
+
+
+
+    def locations_to_faces(face_location):
+        cropped_region =  cv2img[face_locations[0]:face_locations[2], face_locations[3]:face_locations[1]]
+        cv2.imshow("Cropped Region: ", cropped_region) 
+        return cropped_region
