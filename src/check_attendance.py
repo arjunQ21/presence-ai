@@ -5,6 +5,14 @@ from functions import make_sure_image_exists, empty_directory
 import os
 import cv2
 
+# Parameters:
+# `group_image_path` is path of image of users in group, sent from POST Request from Flutter app, when taking attendance.
+
+# `student_images` is an array of file paths of images of students in the group for which attendance is being taken.
+
+# Return Value:
+
+# array of file paths of images of students detected in the provided group_image_path parameter. This array is subset of student_images array.
 
 def check_attendance(group_image_path, student_images):
     for path in [group_image_path, *student_images]:
@@ -35,11 +43,11 @@ def get_individual_faces_in(image_path):
 
 # get_individual_faces_in("test-images/lumre.jpg")
 
-print(
-    check_attendance(
-        "test-images/lumre.jpg",
-        [
-            "temp-faces/08b44451-c5c4-4652-8af7-dc2f96f2b8a8.jpg",
-        ],
-    )
-)
+# print(
+#     check_attendance(
+#         "test-images/lumre.jpg",
+#         [
+#             "temp-faces/08b44451-c5c4-4652-8af7-dc2f96f2b8a8.jpg",
+#         ],
+#     )
+# )
