@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Layer, Conv2D, Dense, MaxPooling2D, Input, Flatten
+import os
 
 def _make_embedding(): 
     inp = Input(shape=(105,105,3), name='input_image')
@@ -61,6 +62,6 @@ def make_siamese_model():
 
 
 # loading existing siamese model
-siamese_model = tf.keras.models.load_model('siamese_modelv2.h5', 
+siamese_model = tf.keras.models.load_model( os.path.abspath( '/Users/arjunq21/Documents/python/presence-ai/siamese_modelv2.h5'), 
                                    custom_objects={'L1Dist':L1Dist, 'BinaryCrossentropy':tf.losses.BinaryCrossentropy})
 
