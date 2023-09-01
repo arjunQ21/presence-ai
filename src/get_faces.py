@@ -1,8 +1,9 @@
 import face_recognition as fr
 # import time
-from functions import image_needs_resizing, resize_image
+from functions import image_needs_resizing, resize_image, make_sure_image_exists
 
 def get_faces_in(image_path):
+    make_sure_image_exists(image_path)
     if(image_needs_resizing(image_path)):
         resize_image(image_path)
 
