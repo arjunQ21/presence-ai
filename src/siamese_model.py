@@ -65,3 +65,60 @@ def make_siamese_model():
 siamese_model = tf.keras.models.load_model( os.path.abspath( '/Users/arjunq21/Documents/python/presence-ai/siamese_modelv2.h5'), 
                                    custom_objects={'L1Dist':L1Dist, 'BinaryCrossentropy':tf.losses.BinaryCrossentropy})
 
+
+
+
+
+# def resize_image(image_path):   
+#     make_sure_image_exists(image_path)
+#     image = cv2.imread(image_path)
+#     height, width, _ = image.shape
+#     print("Resizing image: {}x{}".format(height, width))
+#     if height > width:
+#         new_height = 1000
+#         new_width = int(width * (1000/height))
+#     else:
+#         new_width = 1000
+#         new_height = int(height * (1000/width))
+#     resized_image = cv2.resize(image, (new_width, new_height))
+#     cv2.imwrite(image_path, resized_image)
+#     return 0
+
+# def preprocess(image_path):
+#     make_sure_image_exists(image_path)
+#     byte_image = tf.io.read_file(image_path)
+# #     print(byte_image)
+#     img = tf.io.decode_jpeg(byte_image)
+# #     print(img)
+# #     plt.imshow(img)
+#     img = tf.image.resize(img, (105, 105))
+
+#     img = img / 255.0 
+# #     plt.imshow(img)
+#     #     plt.n
+#     return img
+
+
+
+# def image_needs_resizing(image_path):
+#     make_sure_image_exists(image_path)
+#     image = cv2.imread(image_path)
+#     height, width, _ = image.shape
+#     if height > 1000 or width > 1000:
+#         return True
+#     return False
+
+# def resize_image(image_path):   
+#     make_sure_image_exists(image_path)
+#     image = cv2.imread(image_path)
+#     height, width, _ = image.shape
+#     print("Resizing image: {}x{}".format(height, width))
+#     if height > width:
+#         new_height = 1000
+#         new_width = int(width * (1000/height))
+#     else:
+#         new_width = 1000
+#         new_height = int(height * (1000/width))
+#     resized_image = cv2.resize(image, (new_width, new_height))
+#     cv2.imwrite(image_path, resized_image)
+#     return 0

@@ -62,3 +62,20 @@ def empty_directory(directory_path):
             # Remove subdirectories and their contents recursively
             shutil.rmtree(item_path)
 
+def predictAll(anchor_image, validation_image):
+    map(lambda x: make_sure_image_exists(x), [anchor_image, validation_image])
+    data = tf.data.Dataset.zip(
+        tf.data.Dataset.from_tensor_slices([preprocess(anchor_image)]),
+        tf.data.Dataset.from_tensor_slices([preprocess(validation_image)]),
+    )
+    data = data.batch(1)
+    test_inp, test_val = data.as_numpy_iterator().next()
+    predictions = siamese_model.predict([test_inp, test_val])
+    return predictions[0]
+
+
+
+
+
+
+
